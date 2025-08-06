@@ -113,12 +113,7 @@ from statsmodels.tsa.statespace.sarimax import SARIMAX
 import numpy as np
 
 app = Flask(__name__)
-CORS(app)
-
-# Add a root route to confirm server is up
-@app.route('/')
-def home():
-    return "✅ COVID-19 Forecasting Backend is running!"
+CORS(app)  # Allow requests from Vercel frontend
 
 # Load and clean dataset
 df = pd.read_csv('data/covid_19_clean_complete.csv')
